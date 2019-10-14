@@ -57,7 +57,7 @@ int main(int argc, char** argv){
 
     if(!goSilent) {
         cout << "Notes++ " << APP_VERSION << endl;
-        cout << "By: gncho@amazon.com" << endl;
+        cout << "By: nickg047@sdf.org" << endl;
         cout << "====================" << endl << endl;
     }
     
@@ -101,7 +101,7 @@ int main(int argc, char** argv){
                 }
             } else if (strcmp(argv[i], "-v") == 0){
                 cout << "Notes++ Version " << APP_VERSION << endl;
-                cout << "By: gncho@amazon.com" << endl;
+                cout << "By: nickg047@sdf.org" << endl;
             } else if (strcmp(argv[i], "-l") == 0){
                 handleInput("list");
             } else if (strcmp(argv[i], "-h") == 0){
@@ -147,7 +147,7 @@ int main(int argc, char** argv){
 
 void printCliHelp(){
     cout << "Notes++ " << APP_VERSION << endl;
-    cout << "By: gncho@amazon.com" << endl;
+    cout << "By: nickg047@sdf.org" << endl;
     cout << "====================" << endl;
     cout << endl;
     cout << "-h         : print help" << endl;
