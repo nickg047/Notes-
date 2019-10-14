@@ -6,12 +6,12 @@ nickg047@sdf.org
 A simple command line note and task management app
 
 ## Compilation
-`make`
+`make`  
 `make install`
 
 ## Usage
-To get a list of all currently available commands:
+To get a list of all currently available commands:  
 `npp -h`
 
-To launch in guided/menu mode
+To launch in guided/menu mode:  
 `npp`
