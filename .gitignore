@@ -1,4 +1,5 @@
-
+*.o
+notes++
 *test*
 dbs
 .vscode
