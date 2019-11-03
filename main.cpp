@@ -19,7 +19,7 @@ void handleInput(const string&); // process user input
 string prompt(); // prompt the user without a header
 string prompt(const string&); // prompt the user with a specified header
 string toLower(const string&); // convert a string to lower case
-signal strToSignal(const string&); // convert a string to its signal enum
+enum signal strToSignal(const string&); // convert a string to its signal enum
 bool areEqual(const string&, const string&); // compare two strings and return boolean
 bool areEqual(const char*, const char*); // compare two cstrings - TODO refactor prior calls to use this !! TODO
 void printHelp(); // print the help menu to stdout
@@ -284,7 +284,7 @@ void loadDB(bool silent){
    
 }
 
-signal strToSignal(const string& str){
+enum signal strToSignal(const string& str){
     if(areEqual(str, "quit")){
         return QUIT;
     } else if (areEqual(str, "new note") || areEqual(str, "new")){

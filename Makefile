@@ -1,4 +1,16 @@
+CC=g++
+CFLAGS=-std=c++11
+
 default: build
+
+build: color.o notes.o main.cpp
+	$(CC) $(CFLAGS) -o notes++ main.cpp notes.o color.o
+
+color.o: color.cpp
+	$(CC) $(CFLAGS) -w -c color.cpp
+
+notes.o: notes.cpp
+	$(CC) $(CFLAGS) -c notes.cpp
 
 clean:
 	rm -f *.o
@@ -8,34 +20,14 @@ fresh:
 	make clean
 	make
 
-build:
-	g++ -w -c color.cpp
-	g++ -c notes.cpp
-	g++ -o notes++ main.cpp notes.o color.o
-
-rebuild:
-	make clean
-	make build
-
 run:
 	./notes++
 
-runtest:
+test:
 	./notes++ -db ./nppdb_test.db
 
-runfreshtest:
-	make fresh
-	make runtest
-
-freshruntest:
-	make runfreshtest
-
 memtest: fresh
-	valgrind ./notes++
-
-runfresh:
-	make fresh
-	make run
+	valgrind ./notes++ -db ./nppdb_test.db
 
 install:
 	cp ./notes++ /usr/local/bin/
