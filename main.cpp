@@ -502,7 +502,7 @@ void printHelp(){
     cout << "\'high priority\'    - Mark a note as important" << endl;
     cout << "\'low priority\'     - Remove priority from a note" << endl;
     cout << "\'clear list\'       - Delete all notes in the list" << endl;
-    cout << "\'clear completed\'       - Delete all completed notes in the list" << endl;
+    cout << "\'clear completed\'  - Delete all completed notes in the list" << endl;
     cout << "\'archive\'          - Archive all completed items" << endl;
     cout << "\'help\'             - Print this info" << endl;
     cout << "\'quit\'             - Exit this program" << endl;
