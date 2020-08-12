@@ -9,7 +9,7 @@
 #include "color.h"
 
 #define DB_VERSION 2
-#define APP_VERSION 0.52
+#define APP_VERSION 0.53
 
 using namespace std;
 using namespace Color;

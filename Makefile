@@ -1,13 +1,16 @@
 CC=g++
 CFLAGS=-std=c++11
 
-default: build
+default: npp
 
-build: color.o notes.o main.cpp
-	$(CC) $(CFLAGS) -o notes++ main.cpp notes.o color.o
+npp: color.o notes.o note.o main.cpp
+	$(CC) $(CFLAGS) -o notes++ main.cpp note.o notes.o color.o
 
 color.o: color.cpp
 	$(CC) $(CFLAGS) -w -c color.cpp
+
+note.o: note.cpp
+	$(CC) $(CFLAGS) -c note.cpp
 
 notes.o: notes.cpp
 	$(CC) $(CFLAGS) -c notes.cpp
@@ -15,6 +18,7 @@ notes.o: notes.cpp
 clean:
 	rm -f *.o
 	rm -f notes++
+	rm nppdb_test.db
 
 fresh:
 	make clean
@@ -23,10 +27,10 @@ fresh:
 run:
 	./notes++
 
-test:
+test: npp_test.db
 	./notes++ -db ./nppdb_test.db
 
-memtest: fresh
+memtest: npp npp_test.db
 	valgrind ./notes++ -db ./nppdb_test.db
 
 install:
@@ -37,7 +41,11 @@ uninstall:
 	rm /usr/local/bin/notes++
 	rm /usr/local/bin/npp
 
-gentest:
+
+gentest: npp_test.db
+
+
+npp_test.db: 
 	touch nppdb_test.db
 	echo "NPP-DB-HEAD" > nppdb_test.db
 	echo "V:2" >> nppdb_test.db
