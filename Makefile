@@ -20,7 +20,7 @@ notes.o: notes.cpp
 clean:
 	rm -f *.o
 	rm -f notes++
-	rm nppdb_test.db
+	rm -f nppdb_test.db
 
 fresh:
 	make clean
