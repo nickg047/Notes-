@@ -3,3 +3,5 @@ notes++
 *test*
 dbs
 .vscode
+.DS_Store
+.idea

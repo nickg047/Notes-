@@ -1,6 +1,8 @@
 CC=g++
 CFLAGS=-std=c++11
 
+all: npp
+
 default: npp
 
 npp: color.o notes.o note.o main.cpp
