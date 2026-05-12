@@ -1,5 +1,6 @@
 CC=g++
 CFLAGS=-std=c++11
+TARGET=/usr/local/bin
 
 all: npp
 
@@ -36,12 +37,12 @@ memtest: npp npp_test.db
 	valgrind ./notes++ -db ./nppdb_test.db
 
 install:
-	cp ./notes++ /usr/local/bin/
-	ln -s -f /usr/local/bin/notes++ /usr/local/bin/npp
+	cp ./notes++ $(TARGET)
+	ln -s -f $(TARGET)/notes++ $(TARGET)/npp
 
 uninstall:
-	rm /usr/local/bin/notes++
-	rm /usr/local/bin/npp
+	rm $(TARGET)/notes++
+	rm $(TARGET)/npp
 
 
 gentest: npp_test.db
